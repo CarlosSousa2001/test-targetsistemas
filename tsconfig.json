@@ -2,12 +2,20 @@
   "compilerOptions": {
     "target": "ES6",                     // Alvo para ES6
     "module": "ES6",                     // Usar módulos ES6
-    "rootDir": "./",                     // Diretório raiz dos arquivos fonte
-    "outDir": "./build",                 // Diretório de saída para os arquivos transpilados
-    "strict": true,                      // Habilita verificações estritas
-    "esModuleInterop": true,             // Facilita a interoperabilidade com CommonJS
-    "skipLibCheck": true                 // Ignorar checagem de tipos em arquivos de declaração
+    "rootDir": "./src",                   // Diretório raiz dos arquivos fonte
+    "outDir": "./build",                  // Diretório de saída para os arquivos transpilados
+    "strict": true,                       // Habilita verificações estritas
+    "esModuleInterop": true,              // Facilita a interoperabilidade com CommonJS
+    "skipLibCheck": true,                 // Ignorar checagem de tipos em arquivos de declaração
+    "moduleResolution": "node",           // Configuração para resolver módulos como o Node.js
+    "resolveJsonModule": true,            // Se necessário, para resolver módulos JSON
+    "baseUrl": ".",                       // Base URL para resolução de módulos
+    "paths": {
+      "*": ["node_modules/*", "src/*"]    // Caminhos relativos para os módulos
+    }
   },
-  "include": ["index.ts"],               // Arquivos para incluir na compilação
-  "exclude": ["node_modules"]           // Ignorar o diretório `node_modules`
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
 }
